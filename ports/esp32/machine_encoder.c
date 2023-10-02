@@ -626,13 +626,13 @@ MP_DEFINE_CONST_OBJ_TYPE(
 STATIC void mp_machine_Encoder_init_helper(mp_pcnt_obj_t *self, size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum { ARG_phase_a, ARG_phase_b, ARG_x124, ARG_filter_ns };
     static const mp_arg_t allowed_args[] = {
-        { MP_QSTR_phase_a, MP_ARG_OBJ, {.u_obj = MP_OBJ_NULL} },
-        { MP_QSTR_phase_b, MP_ARG_OBJ, {.u_obj = MP_OBJ_NULL} },
-        { MP_QSTR_x124, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = -1} },
-        { MP_QSTR_filter_ns, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = -1} },
+        {MP_QSTR_phase_a, MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = MP_OBJ_NULL}},
+        {MP_QSTR_phase_b, MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = MP_OBJ_NULL}},
+        {MP_QSTR_x124, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = -1}},
+        {MP_QSTR_filter_ns, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = -1}},
     };
 
-    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)]={0};
     mp_arg_parse_all(n_args, pos_args, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
     mp_obj_t src = args[ARG_phase_a].u_obj;
