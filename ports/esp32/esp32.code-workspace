@@ -1,0 +1,29 @@
+{
+	"folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "*.py": "python",
+            "*.projectspec": "xml",
+            "runtime.h": "c",
+            "pcnt.h": "c",
+            "pulse_cnt.h": "c",
+            "pcnt_types_legacy.h": "c"
+        },
+        "cmake.autoSelectActiveFolder": true,
+        "cmake.configureOnOpen": true,
+        "cmake.automaticReconfigure": true,
+        "cmake.buildDirectory": "${workspaceFolder}/build-ESP32_GENERIC",
+        "cmake.buildTask": false,
+        "cmake.configureArgs": [
+            "-D MICROPY_BOARD=ESP32_GENERIC ",
+            "-D MICROPY_BOARD_DIR=${workspaceFolder}/boards/ESP32_GENERIC"
+        ],
+        "cmake.copyCompileCommands": ".",
+        "cmake.skipConfigureIfCachePresent": true,
+        "cmake.sourceDirectory": "${workspaceFolder}"
+    }
+}
